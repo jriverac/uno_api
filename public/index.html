@@ -24,7 +24,7 @@
     <script type="text/javascript" charset="utf-8">
       $(function() {
         function addMessage(message) {
-          $('#messages').append('<li>' + message.subject + '</ul>');
+          $('#messages').append('<li>' + message.subject + ' - ' + message.created_at + ': ' + message.body + '</ul>');
         }
 
         $('#new_message').submit(function(e) {
