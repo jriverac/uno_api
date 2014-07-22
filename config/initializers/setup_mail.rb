@@ -1,9 +1,9 @@
 ActionMailer::Base.smtp_settings = {
    :address => "smtpout.secureserver.net",
    :port => "25",
-   :domain => ,
-   :user_name => ,
-   :password => ,
+   :domain => ENV["EMAIL_DOMAIN"],
+   :user_name => ENV["EMAIL_USERNAME"],
+   :password => ENV["EMAIL_PASSWORD"],
    :authentication => "plain",
    :enable_starttls_auto => true
 }
