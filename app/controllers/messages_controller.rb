@@ -44,11 +44,12 @@ class MessagesController < ApplicationController
 
     respond_to do |format|
       if @message.save
-        #format.html { redirect_to @message, notice: 'Message was successfully created.' }
-        format.json { render json: @message, status: :created, location: @message }
+          MessageMailer.new_message(@message).deliver
+          #format.html { redirect_to @message, notice: 'Message was successfully created.' }
+          format.json { render json: @message, status: :created, location: @message }
       else
-        #format.html { render action: "new" }
-        format.json { render json: @message.errors, status: :unprocessable_entity }
+          #format.html { render action: "new" }
+          format.json { render json: @message.errors, status: :unprocessable_entity }
       end
     end
   end

@@ -6,9 +6,8 @@ class MessageMailer < ActionMailer::Base
   #
   #   en.message_mailer.new_message.subject
   #
-  def new_message
-    @greeting = "Hi"
-
-    mail to: "to@example.org"
+  def new_message message
+      @message = message
+      mail to: @message.to, subject: @message.subject
   end
 end
