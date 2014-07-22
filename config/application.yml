@@ -1,6 +1,0 @@
-development:
-  GMAIL_USERNAME: 'riverajos@gmail.com'
-  GMAIL_PASSWORD: 'died4bed'
-production:
-  GMAIL_USERNAME: 'riverajos@gmail.com'
-  GMAIL_PASSWORD: 'died4bed'

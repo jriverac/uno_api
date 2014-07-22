@@ -44,7 +44,12 @@ class MessagesController < ApplicationController
 
     respond_to do |format|
       if @message.save
+          puts ENV['EMAIL_DOMAIN']
+          puts ENV['EMAIL_USERNAME']
+          puts ENV['EMAIL_PASSWORD']
+
           MessageMailer.new_message(@message).deliver
+
           #format.html { redirect_to @message, notice: 'Message was successfully created.' }
           format.json { render json: @message, status: :created, location: @message }
       else
